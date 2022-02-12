@@ -1,0 +1,48 @@
+<div class="limiter animated fadeInLeft">
+    <div class="container">
+        <div class="row" style="text-align: center;">
+
+            <form (ngSubmit)="login( f )" #f="ngForm">
+
+                <h1>
+                    Login
+                </h1>
+
+
+                <div class="row mb-3">
+                    <input class="form-control" type="text" name="email" [(ngModel)]="usuario.email" required email placeholder="Email">
+                    <span *ngIf="f.submitted && f.controls['email'].errors" class="text-danger">El correo es obligatorio</span>
+
+                </div>
+
+                <div class="row mb-3" data-validate="Password is required">
+                    <input class="form-control" type="password" name="password" [(ngModel)]="usuario.password" required minlength="6" placeholder="Password">
+                    <span *ngIf="f.submitted && f.controls['password'].errors" class="text-danger animated fadeIn">Al menos 6 letras</span>
+
+                </div>
+
+                <div class="flex-sb-m w-full p-t-3 p-b-24">
+                    <div class="form-check">
+                        <input [(ngModel)]="recordarme" class="form-check-input" id="ckb1" type="checkbox" name="recordarme">
+                        <label for="ckb1" class="form-check-label">
+                          Recordar mi usuario
+                      </label>
+                    </div>
+
+                    <div>
+                        <a routerLink="/registro">
+                          ¿No tienes cuenta?
+                      </a>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <button class="btn btn-primary" type="submit">
+                      Ingresar
+                  </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

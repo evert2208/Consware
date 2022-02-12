@@ -1,0 +1,10 @@
+.navbar {
+    background-color: #0056b3 !important;
+    color: white !important;
+}
+
+.nav-link {
+    color: white !important;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 15px;
+}
